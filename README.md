@@ -223,7 +223,7 @@ Android apps on devices with Google Play Services installed can use
 [cross-client authentication](https://developers.google.com/accounts/docs/CrossClientAuth) to perform
 client authentication with Hoomi. When your clients are authenticated, Hoomi will issue longer-lived tokens
 to your application, and this process can be used to ensure that no malicious apps can masquerade as your
-application to get a token for a user that would log them into your apps.
+Hoomi application to get a token for a user that would log them into your apps.
 
 To add client authentication to your application, you will first need to create a corresponding project
 in the [Google Developers Console](https://console.developers.google.com/project). Once the project has been
@@ -261,7 +261,7 @@ using the [developer portal](https://www.hoomi.co/developer/apps). You can add m
 commas.
 
 Finally, to enable client authentication in your app, add the following call to
-[`setWebGoogleClientId()`](http://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#setWebGoogleClientId-java.lang.String-)
+[`setWebGoogleClientId()`](https://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#setWebGoogleClientId-java.lang.String-)
 to your `Application.onCreate()` method after you initialize your `HoomiClient`:
 
 ```java
@@ -273,10 +273,9 @@ public void onCreate() {
 }
 ```
 
-Client authentication requires Google Play Services and a Google account on the device (which be there if your app
-was downloaded from the Play Store).  The SDK will automatically skip client authentication if either
-of these conditions are not met.  You can check whether a token was issued to an authenticated client by
-[fetching the token information](#using-token) from Hoomi.
+Client authentication requires Google Play Services and a Google account on the device (which will generally be the)
+case if your app was downloaded from the Play Store.  The SDK will automatically skip client authentication if either
+of these conditions are not met.
 
 <a name="using-token">
 ## Using an Access Token
@@ -288,13 +287,13 @@ automatically cache the access token it has received in local storage on the dev
 runs of the application.
 
 You can retrieve the stored access token at any time by calling
-[`getCurrentToken()`](http://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#getCurrentToken--).
+[`getCurrentToken()`](https://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#getCurrentToken--).
 
 To get information about the access token you have (e.g. the user ID for the user that authorized your application or the
 token's expiration time), you can call
-[`getTokenInformationAsync`](http://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#getTokenInformationAsync-co.hoomi.HoomiAccessToken-).
+[`getTokenInformationAsync`](https://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#getTokenInformationAsync-co.hoomi.HoomiAccessToken-).
 If the `Task` returns successfully, the token is valid, and a
-[`TokenInformation`](http://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/response/TokenInformation.html) provides
+[`TokenInformation`](https://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/response/TokenInformation.html) provides
 information about the token itself.
 
 <a name="app-data">
@@ -308,7 +307,7 @@ to that data is restricted to those who have a valid token for the user.
 
 Taking advantage of this feature requires that you request the `user:app:data:read` and `user:app:data:write` scopes during login.
 Once you've done this, you can retrieve the App Data for a user by calling
-[`getAppDataAsync()`](http://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#getAppDataAsync--) like this:
+[`getAppDataAsync()`](https://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#getAppDataAsync--) like this:
 
 ```java
 HoomiClient.getCurrentClient()
@@ -323,7 +322,7 @@ HoomiClient.getCurrentClient()
 ```
 
 Similarly, you can save App Data using the
-[`setAppDataAsync()`](http://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#setAppDataAsync-co.hoomi.HoomiAccessToken-JSONObject-java.lang.String-)
+[`setAppDataAsync()`](https://gethoomi.github.io/hoomi-sdk-android/javadoc/co/hoomi/HoomiClient.html#setAppDataAsync-co.hoomi.HoomiAccessToken-JSONObject-java.lang.String-)
 method:
 
 ```java
