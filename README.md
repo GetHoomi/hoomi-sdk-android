@@ -223,7 +223,7 @@ Android apps on devices with Google Play Services installed can use
 [cross-client authentication](https://developers.google.com/accounts/docs/CrossClientAuth) to perform
 client authentication with Hoomi. When your clients are authenticated, Hoomi will issue longer-lived tokens
 to your application, and this process can be used to ensure that no malicious apps can masquerade as your
-Hoomi application to get a token for a user that would log them into your apps.
+application to get a token for a user that would log them into your apps.
 
 To add client authentication to your application, you will first need to create a corresponding project
 in the [Google Developers Console](https://console.developers.google.com/project). Once the project has been
@@ -273,9 +273,10 @@ public void onCreate() {
 }
 ```
 
-Client authentication requires Google Play Services and a Google account on the device (which will generally be the)
-case if your app was downloaded from the Play Store.  The SDK will automatically skip client authentication if either
-of these conditions are not met.
+Client authentication requires Google Play Services and a Google account on the device (which be there if your app
+was downloaded from the Play Store).  The SDK will automatically skip client authentication if either
+of these conditions are not met.  You can check whether a token was issued to an authenticated client by
+[fetching the token information](#using-token) from Hoomi.
 
 <a name="using-token">
 ## Using an Access Token
@@ -328,7 +329,7 @@ method:
 ```java
 JSONObject data = new JSONObject();
 data.put("highScore", 9001);
-data.put("favorites", new JSONArray(favorite1, favorite2));
+data.put("favorites", new JSONArray(Arrays.asList(favorite1, favorite2)));
 data.put("theme", "dark");
 data.put("lastLogin", new Date().toString());
 HoomiClient.getCurrentClient()
