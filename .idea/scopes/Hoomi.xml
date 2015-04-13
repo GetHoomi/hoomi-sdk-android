@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Hoomi" pattern="src[hoomi]:*..*&amp;&amp;!src[hoomi]:co.hoomi.BuildConfig&amp;&amp;!src[hoomi]:co.hoomi.R" />
+</component>

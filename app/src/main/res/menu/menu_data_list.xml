@@ -1,0 +1,12 @@
+<!--
+  ~ Copyright (c) 2015. Hoomi, Inc.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="co.hoomi.yesyoo.DataListActivity">
+    <item android:id="@+id/action_logout"
+          android:title="@string/action_logout"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+</menu>
