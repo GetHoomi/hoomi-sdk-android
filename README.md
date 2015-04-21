@@ -42,7 +42,7 @@ dependencies {
 ```
 
 Once you have added the Hoomi dependency to your project, you should initialize the Hoomi SDK in your `Application.onCreate()`
-method, replacing `HOOMI_APPLICATION_ID` with the application ID for your app from the [developer dashboard](https://www.hoomi.co/developer/apps):
+method, replacing `HOOMI_APPLICATION_ID` with the application ID for your app from the [developer portal](https://www.hoomi.co/developer/apps):
 
 ```java
 package com.example;
@@ -97,7 +97,7 @@ If you are not using client authentication, you may omit the `GET_ACCOUNTS` perm
 
 In order to use Hoomi login, you must allow Hoomi to pass data to your app.  Your app can accomplish this by
 handling a specially-crafted URL, which allows the browser or Hoomi app to redirect back to your application
-after a user authorizes the app.  The Hoomi SDK provides a built-in `Activity` that can be used to handle this
+after a user authorizes your app.  The Hoomi SDK provides a built-in `Activity` that can be used to handle this
 redirect, requiring only a small amount of configuration in your `AndroidManifest.xml` file.
 
 To define a redirect handler for your application, you should choose a custom URL scheme and prefix.  We
